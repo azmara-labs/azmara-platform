@@ -42,4 +42,4 @@ jobs:
             You only need to do this once. Comment below with:
 
             > I have read the CLA Document and I hereby sign the CLA
-          custom-pr-sign-detected-comment: "Thank you for signing our CLA! ✅"
+          custom-allsigned-prcomment: "Thank you for signing our CLA! ✅"
