@@ -160,9 +160,7 @@ export function createHttpAdapter(options: HttpAdapterOptions): ModelAdapter {
       }
 
       if (!response.ok) {
-        throw new Error(
-          `[azmr/ai] API error ${response.status} from ${redactUrl(endpoint)}`,
-        );
+        throw new Error(`[azmr/ai] API error ${response.status} from ${redactUrl(endpoint)}`);
       }
 
       const data = (await response.json()) as {

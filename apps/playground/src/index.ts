@@ -4,7 +4,7 @@ import { fileURLToPath } from "node:url";
  * Azmara Playground
  * Demonstrates core + query + db working together.
  */
-import { Signal, computed, effect } from "@azmr/core";
+import { computed, effect, Signal } from "@azmr/core";
 import { SQLiteAdapter } from "@azmr/db";
 import { query } from "@azmr/query";
 
@@ -49,6 +49,7 @@ for (const c of active) {
 console.log("\n── SQLite Persistence ──");
 
 import { mkdirSync } from "node:fs";
+
 mkdirSync(DB_BASE, { recursive: true });
 
 const db = new SQLiteAdapter(DB_PATH, DB_BASE);

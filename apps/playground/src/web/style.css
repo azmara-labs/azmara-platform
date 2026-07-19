@@ -128,11 +128,9 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background: radial-gradient(
-      ellipse 80% 40% at 50% -10%,
-      rgba(232, 160, 48, 0.06) 0%,
-      transparent 60%
-    ), var(--bg);
+  background:
+    radial-gradient(ellipse 80% 40% at 50% -10%, rgba(232, 160, 48, 0.06) 0%, transparent 60%),
+    var(--bg);
 }
 
 /* ── Header ───────────────────────────────────────────────────────────── */

@@ -1,4 +1,4 @@
-import { describe, expect, it, vi, beforeEach, afterEach } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { createHttpAdapter } from "./http.js";
 
 // Minimal context fixture
@@ -16,9 +16,9 @@ describe("createHttpAdapter — construction", () => {
   });
 
   it("throws if endpoint is empty", () => {
-    expect(() =>
-      createHttpAdapter({ endpoint: "", apiKey: "key", model: "gpt-4o" }),
-    ).toThrow("endpoint is required");
+    expect(() => createHttpAdapter({ endpoint: "", apiKey: "key", model: "gpt-4o" })).toThrow(
+      "endpoint is required",
+    );
   });
 });
 
@@ -37,7 +37,9 @@ describe("createHttpAdapter — suggest()", () => {
       status: 200,
       headers: new Headers(),
       json: vi.fn().mockResolvedValue({
-        choices: [{ message: { content: "const x = 1;\nEXPLANATION: Removed eval\nCONFIDENCE: high" } }],
+        choices: [
+          { message: { content: "const x = 1;\nEXPLANATION: Removed eval\nCONFIDENCE: high" } },
+        ],
       }),
     };
     vi.mocked(fetch).mockResolvedValue(mockResponse as unknown as Response);

@@ -49,7 +49,7 @@ const RULES: Rule[] = [
     id: "no-eval",
     severity: "error",
     description: "eval() and new Function() are forbidden — they bypass sandbox and type safety",
-    check(source, lines) {
+    check(_source, lines) {
       const findings: AnalysisFinding[] = [];
       lines.forEach((line, i) => {
         if (/\beval\s*\(/.test(line) || /new\s+Function\s*\(/.test(line)) {
@@ -102,8 +102,7 @@ const RULES: Rule[] = [
           findings.push({
             rule: "no-dangerously-set-inner-html",
             severity: "error",
-            message:
-              "dangerouslySetInnerHTML with dynamic value detected — XSS risk",
+            message: "dangerouslySetInnerHTML with dynamic value detected — XSS risk",
             line: i + 1,
             hint: "Render data as text content, never as raw HTML",
           });
@@ -128,8 +127,7 @@ const RULES: Rule[] = [
               severity: "error",
               message: "File system access without assertSafePath() — path traversal risk",
               line: i + 1,
-              hint:
-                "Call assertSafePath(resolvedPath, allowedBase) before any file operation on user-supplied paths",
+              hint: "Call assertSafePath(resolvedPath, allowedBase) before any file operation on user-supplied paths",
             });
           }
         });
@@ -201,8 +199,7 @@ const RULES: Rule[] = [
   {
     id: "raw-select-with-user-input",
     severity: "warning",
-    description:
-      "db.rawSelect() must only receive developer-authored SQL, never end-user input",
+    description: "db.rawSelect() must only receive developer-authored SQL, never end-user input",
     check(_source, lines) {
       const findings: AnalysisFinding[] = [];
       lines.forEach((line, i) => {
@@ -230,8 +227,7 @@ const RULES: Rule[] = [
     description: "Audit log meta should never contain passwords, tokens, or raw PII",
     check(_source, lines) {
       const findings: AnalysisFinding[] = [];
-      const piiPatterns =
-        /\b(password|token|secret|apiKey|api_key|ssn|creditCard|credit_card)\b/i;
+      const piiPatterns = /\b(password|token|secret|apiKey|api_key|ssn|creditCard|credit_card)\b/i;
       lines.forEach((line, i) => {
         if (/audit\.log\(/.test(line) && piiPatterns.test(line)) {
           findings.push({
@@ -342,8 +338,6 @@ export function formatReport(result: AnalysisResult): string {
     info: result.findings.filter((f) => f.severity === "info").length,
   };
 
-  lines.push(
-    `\n  ${counts.errors} error(s)  ${counts.warnings} warning(s)  ${counts.info} info`,
-  );
+  lines.push(`\n  ${counts.errors} error(s)  ${counts.warnings} warning(s)  ${counts.info} info`);
   return lines.join("\n");
 }

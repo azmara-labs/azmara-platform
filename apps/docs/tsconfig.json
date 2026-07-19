@@ -1,4 +1,4 @@
 {
-	"extends": "@docusaurus/tsconfig",
-	"compilerOptions": {}
+  "extends": "@docusaurus/tsconfig",
+  "compilerOptions": {}
 }
