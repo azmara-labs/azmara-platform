@@ -1,0 +1,4 @@
+# Default owner for everything not matched below.
+# Code owner review isn't currently required (solo maintainer) - this
+# file is groundwork for when require_code_owner_review is turned on.
+* @coderchef26
