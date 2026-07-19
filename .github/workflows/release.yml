@@ -42,11 +42,13 @@ jobs:
         uses: changesets/action@v1
         with:
           # When changesets are present: opens a "Version Packages" PR
-          # When that PR is merged: publishes to npm via OIDC trusted publishing
+          # When that PR is merged: publishes to npm
           publish: pnpm changeset publish
           version: pnpm changeset version
           title: "chore: version packages"
           commit: "chore: version packages"
         env:
           GITHUB_TOKEN: ${{ secrets.AP_GH_PAT }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           NPM_CONFIG_PROVENANCE: "true"
