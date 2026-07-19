@@ -18,7 +18,7 @@
  *   }
  */
 
-import type { SandboxResult } from "./sandbox.js";
+import type { SandboxResult } from "./sandbox-types.js";
 
 export interface SandboxRunResult extends SandboxResult {
   _sandboxEngine: "isolated-vm" | "fallback";
@@ -29,6 +29,10 @@ let _useIsolatedVm: boolean | null = null;
 async function isIsolatedVmAvailable(): Promise<boolean> {
   if (_useIsolatedVm !== null) return _useIsolatedVm;
   try {
+    // @ts-ignore isolated-vm is an optionalDependency — its types may not be
+    // installed here. This probe only cares whether the import throws, not
+    // what it resolves to (present on machines/CI with a working native
+    // toolchain, absent otherwise — @ts-ignore avoids erroring either way).
     await import("isolated-vm");
     _useIsolatedVm = true;
   } catch {

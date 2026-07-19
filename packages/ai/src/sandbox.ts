@@ -1,16 +1,13 @@
 import { createAuditLogger } from "@azmr/security";
 import ivm from "isolated-vm";
+import type { SandboxResult } from "./sandbox-types.js";
 
 const SANDBOX_TIMEOUT_MS = 5_000;
 const SANDBOX_MEMORY_MB = 64;
 
 const audit = createAuditLogger("ai:sandbox");
 
-export interface SandboxResult {
-  success: boolean;
-  output?: unknown;
-  error?: string;
-}
+export type { SandboxResult } from "./sandbox-types.js";
 
 /**
  * Executes untrusted code inside a V8 Isolate — a true sandbox with:

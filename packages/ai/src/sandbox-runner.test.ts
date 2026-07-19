@@ -40,10 +40,14 @@ describe("sandbox-runner — fallback sandbox (isolated-vm unavailable)", () => 
     expect(result.success).toBe(false);
   });
 
-  it("enforces timeout on infinite loops", async () => {
-    const { runSandbox } = await import("./sandbox-runner.js");
-    const result = await runSandbox("while(true){}");
-    expect(result.success).toBe(false);
-    expect(result.error?.toLowerCase()).toMatch(/timed out|script execution timed out/);
-  });
+  it(
+    "enforces timeout on infinite loops",
+    async () => {
+      const { runSandbox } = await import("./sandbox-runner.js");
+      const result = await runSandbox("while(true){}");
+      expect(result.success).toBe(false);
+      expect(result.error?.toLowerCase()).toMatch(/timed out|script execution timed out/);
+    },
+    10_000,
+  );
 });

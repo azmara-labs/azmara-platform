@@ -1,5 +1,4 @@
-export { runInSandbox } from "./sandbox.js";
-export type { SandboxResult } from "./sandbox.js";
+export type { SandboxResult } from "./sandbox-types.js";
 export { runSandbox } from "./sandbox-runner.js";
 export type { SandboxRunResult } from "./sandbox-runner.js";
 export { autoFix, buildContext } from "./fix.js";

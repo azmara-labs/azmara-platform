@@ -16,7 +16,7 @@
  */
 
 import vm from "node:vm";
-import type { SandboxResult } from "./sandbox.js";
+import type { SandboxResult } from "./sandbox-types.js";
 
 const TIMEOUT_MS = 5_000;
 
