@@ -23,22 +23,3 @@ export function assertSafeIdentifier(value: string, context = "identifier"): voi
     );
   }
 }
-
-/**
- * Validates that a file path stays within an allowed base directory.
- * Prevents path traversal attacks.
- */
-import path from "node:path";
-
-export function assertSafePath(filePath: string, allowedBase: string): void {
-  if (filePath.includes("\0")) {
-    throw new Error(`[azmara/security] Null byte detected in path: "${sanitiseForLog(filePath)}"`);
-  }
-  const resolved = path.resolve(filePath);
-  const base = path.resolve(allowedBase);
-  if (!resolved.startsWith(base + path.sep) && resolved !== base) {
-    throw new Error(
-      `[azmara/security] Path traversal attempt detected: "${sanitiseForLog(filePath)}"`,
-    );
-  }
-}
