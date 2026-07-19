@@ -1,7 +1,7 @@
 {
   "name": "@azmr/ui",
   "version": "0.0.1",
-  "description": "React UI components wired to reactive Signals â€” Grid, useSignal",
+  "description": "React UI components wired to reactive Signals — Grid, useSignal",
   "type": "module",
   "license": "MIT",
   "author": "Alshafaraz Gazi <alshafaraz.gazi@gmail.com>",
