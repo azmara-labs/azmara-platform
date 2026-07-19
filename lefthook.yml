@@ -1,0 +1,22 @@
+# lefthook.yml — pre-commit and pre-push hooks
+# Install: pnpm prepare  (runs lefthook install)
+# Docs: https://github.com/evilmartians/lefthook
+
+pre-commit:
+  parallel: true
+  commands:
+    biome-check:
+      glob: "*.{ts,tsx,js,jsx,json}"
+      run: pnpm biome check --no-errors-on-unmatched {staged_files}
+      stage_fixed: true
+
+    type-check:
+      run: pnpm check-types
+      # Only run tsc on TS changes — fast enough to run every commit
+      glob: "*.{ts,tsx}"
+
+pre-push:
+  commands:
+    test:
+      run: pnpm test
+      # Full test suite before push — catches regressions early
