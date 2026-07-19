@@ -132,4 +132,4 @@ Full documentation at **[docs.azmara.io](https://docs.azmara.io)**
 
 ## License
 
-MIT © [Azmara Technologies](https://azmara.io) — built in New Zealand 🇳🇿
+MIT © [Azmara Labs](https://azmara.io) — built in New Zealand 🇳🇿

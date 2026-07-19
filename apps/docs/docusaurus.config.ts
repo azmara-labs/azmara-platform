@@ -130,7 +130,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Azmara Technologies. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Azmara Labs. Built with Docusaurus.`,
     },
 
     prism: {
