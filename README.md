@@ -33,12 +33,13 @@ db.insertMany("products", available.map(p => ({ ...p, inStock: 1 })));
 
 | Package | Description | Version |
 |---|---|---|
-| [`@azmr/core`](packages/core) | Reactive signals, effects, and computed values | 0.0.1 |
-| [`@azmr/query`](packages/query) | Chainable, type-safe query builder | 0.0.1 |
-| [`@azmr/security`](packages/security) | Validation, audit logging, env guards | 0.0.1 |
-| [`@azmr/db`](packages/db) | Secure SQLite persistence adapter | 0.0.1 |
-| [`@azmr/ui`](packages/ui) | React components wired to Signals | 0.0.1 |
-| [`@azmr/cli`](packages/cli) | CLI — scaffold apps, query databases | 0.0.1 |
+| [`@azmr/core`](packages/core) | Reactive signals, effects, and computed values | [![npm](https://img.shields.io/npm/v/@azmr/core)](https://www.npmjs.com/package/@azmr/core) |
+| [`@azmr/query`](packages/query) | Chainable, type-safe query builder | [![npm](https://img.shields.io/npm/v/@azmr/query)](https://www.npmjs.com/package/@azmr/query) |
+| [`@azmr/security`](packages/security) | Validation, audit logging, env guards | [![npm](https://img.shields.io/npm/v/@azmr/security)](https://www.npmjs.com/package/@azmr/security) |
+| [`@azmr/db`](packages/db) | Secure SQLite persistence adapter | [![npm](https://img.shields.io/npm/v/@azmr/db)](https://www.npmjs.com/package/@azmr/db) |
+| [`@azmr/ui`](packages/ui) | React components wired to Signals | [![npm](https://img.shields.io/npm/v/@azmr/ui)](https://www.npmjs.com/package/@azmr/ui) |
+| [`@azmr/ai`](packages/ai) | AI auto-fix system — sandboxed code analysis and fixes | [![npm](https://img.shields.io/npm/v/@azmr/ai)](https://www.npmjs.com/package/@azmr/ai) |
+| [`@azmr/cli`](packages/cli) | CLI — scaffold apps, query databases | [![npm](https://img.shields.io/npm/v/@azmr/cli)](https://www.npmjs.com/package/@azmr/cli) |
 
 ---
 

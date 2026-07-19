@@ -2,14 +2,31 @@
   "name": "@azmr/ai",
   "version": "0.0.1",
   "description": "AI auto-fix system with isolated-vm sandboxing — safe code execution and analysis",
+  "type": "module",
   "license": "MIT",
+  "author": "Alshafaraz Gazi <alshafaraz.gazi@gmail.com>",
+  "homepage": "https://docs.azmara.io",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/azmara-labs/azmara-platform.git",
+    "directory": "packages/ai"
+  },
+  "keywords": [
+    "ai",
+    "auto-fix",
+    "sandbox",
+    "isolated-vm",
+    "security",
+    "azmara"
+  ],
   "publishConfig": {
     "access": "public"
   },
   "files": [
-    "dist"
+    "dist",
+    "README.md",
+    "LICENSE"
   ],
-  "type": "module",
   "exports": {
     ".": {
       "import": "./dist/index.js",
