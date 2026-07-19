@@ -1,7 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { assertSafePath, createAuditLogger } from "@azmr/security";
-import { runInSandbox } from "./sandbox.js";
+import { runSandbox } from "./sandbox-runner.js";
 
 const audit = createAuditLogger("ai:fix");
 
@@ -37,7 +37,7 @@ export interface AzmaraContext {
  *
  * Security model:
  * 1. File path is validated against allowed base directory (no traversal)
- * 2. Suggestion is sandboxed before applying (isolated-vm)
+ * 2. Suggestion is sandboxed before applying (isolated-vm in prod, vm fallback in dev)
  * 3. Sandbox failure reverts the change automatically
  * 4. Every fix attempt is written to the audit log
  * 5. Manual approval gate — auto-apply is off by default
@@ -69,7 +69,7 @@ export async function autoFix(
     };
   }
 
-  const sandboxResult = await runInSandbox(suggestion);
+  const sandboxResult = await runSandbox(suggestion);
   if (!sandboxResult.success) {
     audit.log("fix:sandbox-rejected", { file: resolved, error: sandboxResult.error });
     return {

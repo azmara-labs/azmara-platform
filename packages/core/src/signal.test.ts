@@ -1,5 +1,5 @@
 import { describe, expect, it, vi } from "vitest";
-import { Signal, computed, effect } from "./signal.js";
+import { computed, effect, Signal } from "./signal.js";
 
 describe("Signal", () => {
   it("returns initial value", () => {

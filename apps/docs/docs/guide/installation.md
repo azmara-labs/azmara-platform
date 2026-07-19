@@ -13,7 +13,7 @@ sidebar_position: 2
 ## Clone & install
 
 ```bash
-git clone https://github.com/coderchef26/azmara-platform.git
+git clone https://github.com/azmara-labs/azmara-platform.git
 cd azmara-platform
 pnpm install
 ```

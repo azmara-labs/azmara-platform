@@ -88,7 +88,7 @@ pnpm add -g @azmr/cli      # CLI tool
 ### Setup
 
 ```bash
-git clone https://github.com/coderchef26/azmara-platform.git
+git clone https://github.com/azmara-labs/azmara-platform.git
 cd azmara-platform
 pnpm install
 pnpm build
@@ -132,4 +132,4 @@ Full documentation at **[docs.azmara.io](https://docs.azmara.io)**
 
 ## License
 
-MIT © [Azmara Technologies](https://azmara.io) — built in New Zealand 🇳🇿
+MIT © [Azmara Labs](https://azmara.io) — built in New Zealand 🇳🇿

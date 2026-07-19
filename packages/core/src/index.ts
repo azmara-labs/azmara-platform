@@ -1,1 +1,1 @@
-export { Signal, effect, computed } from "./signal.js";
+export { computed, effect, Signal } from "./signal.js";

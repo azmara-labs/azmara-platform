@@ -67,4 +67,4 @@ Full docs at [docs.azmara.io](https://docs.azmara.io)
 
 ## License
 
-MIT © [Azmara Technologies](https://azmara.io)
+MIT © [Azmara Labs](https://azmara.io)

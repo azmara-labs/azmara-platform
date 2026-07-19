@@ -10,7 +10,7 @@ const config: Config = {
   url: "https://docs.azmara.io",
   baseUrl: "/",
 
-  organizationName: "coderchef26",
+  organizationName: "azmara-labs",
   projectName: "azmara-platform",
 
   onBrokenLinks: "throw",
@@ -31,7 +31,7 @@ const config: Config = {
       {
         docs: {
           sidebarPath: "./sidebars.ts",
-          editUrl: "https://github.com/coderchef26/azmara-platform/tree/main/apps/docs/",
+          editUrl: "https://github.com/azmara-labs/azmara-platform/tree/main/apps/docs/",
 
           // Versioning — snapshot with: pnpm version <version-number>
           lastVersion: "current",
@@ -95,7 +95,7 @@ const config: Config = {
           dropdownActiveClassDisabled: true,
         },
         {
-          href: "https://github.com/coderchef26/azmara-platform",
+          href: "https://github.com/azmara-labs/azmara-platform",
           label: "GitHub",
           position: "right",
         },
@@ -125,12 +125,12 @@ const config: Config = {
           items: [
             {
               label: "GitHub",
-              href: "https://github.com/coderchef26/azmara-platform",
+              href: "https://github.com/azmara-labs/azmara-platform",
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Azmara Technologies. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Azmara Labs. Built with Docusaurus.`,
     },
 
     prism: {

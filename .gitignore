@@ -16,3 +16,11 @@ apps/docs/.docusaurus/
 .DS_Store
 Thumbs.db
 .claude/
+
+.vercel
+.env*.local
+
+# Next.js build output (apps/docs-next)
+.next/
+out/
+next-env.d.ts

@@ -2,10 +2,13 @@
   "name": "@azmr/ai",
   "version": "0.0.1",
   "description": "AI auto-fix system with isolated-vm sandboxing — safe code execution and analysis",
+  "license": "MIT",
   "publishConfig": {
     "access": "public"
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "type": "module",
   "exports": {
     ".": {
@@ -14,8 +17,8 @@
     }
   },
   "scripts": {
-    "build": "tsup",
-    "dev": "tsup --watch",
+    "build": "tsup src/index.ts --format esm --dts --clean",
+    "dev": "tsup src/index.ts --format esm --dts --watch",
     "check-types": "tsc --noEmit",
     "test": "vitest run",
     "clean": "rm -rf dist"
@@ -24,13 +27,13 @@
     "@azmr/security": "workspace:*"
   },
   "optionalDependencies": {
-    "isolated-vm": "^5.0.1"
+    "isolated-vm": "^7.0.0"
   },
   "devDependencies": {
-    "@types/node": "^22.0.0",
-    "tsup": "^8.3.5",
+    "@types/node": "^26.1.1",
+    "tsup": "^8.5.1",
     "typescript": "^5.7.3",
-    "vitest": "^2.1.9"
+    "vitest": "^4.1.10"
   },
   "notes": {
     "isolated-vm": "Requires node-gyp native compilation. On Windows: install Visual Studio Build Tools + Python. See: https://github.com/nicolo-ribaudo/isolated-vm"

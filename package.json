@@ -3,7 +3,8 @@
   "private": true,
   "version": "0.0.1",
   "description": "Azmara — modern data-first application runtime",
-  "packageManager": "pnpm@10.6.1",
+  "license": "MIT",
+  "packageManager": "pnpm@11.15.0",
   "engines": {
     "node": ">=20.0.0",
     "pnpm": ">=9.0.0"
@@ -19,26 +20,12 @@
     "audit:deps": "pnpm audit --audit-level=high --ignore-registry-errors",
     "clean": "turbo run clean && rm -rf node_modules"
   },
-  "pnpm": {
-    "onlyBuiltDependencies": ["@biomejs/biome", "better-sqlite3", "esbuild"],
-    "overrides": {
-      "serialize-javascript": ">=7.0.3",
-      "fast-uri": ">=3.1.2",
-      "@babel/plugin-transform-modules-systemjs": ">=7.29.4",
-      "shell-quote": ">=1.8.4",
-      "websocket-driver": ">=0.7.5",
-      "ws": ">=8.21.0",
-      "vitest": ">=3.2.6",
-      "form-data": ">=4.0.6",
-      "vite": ">=6.4.3"
-    }
-  },
   "devDependencies": {
-    "@biomejs/biome": "^1.9.4",
-    "@changesets/cli": "^2.30.0",
-    "tsup": "^8.3.5",
-    "turbo": "^2.3.3",
+    "@biomejs/biome": "^2.5.4",
+    "@changesets/cli": "^2.31.1",
+    "tsup": "^8.5.1",
+    "turbo": "^2.10.5",
     "typescript": "^5.7.3",
-    "vitest": "^2.1.9"
+    "vitest": "^4.1.10"
   }
 }

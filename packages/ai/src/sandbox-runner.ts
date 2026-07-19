@@ -1,0 +1,71 @@
+/**
+ * @azmr/ai — sandbox-runner.ts
+ *
+ * Unified sandbox entry point.
+ * Tries isolated-vm first (production-grade, true V8 isolation).
+ * Falls back to the vm-module sandbox if isolated-vm is unavailable
+ * (Windows dev without native build tools, CI without node-gyp).
+ *
+ * The caller receives the same SandboxResult interface either way.
+ * A `_sandboxEngine` field is added to results so the caller can log
+ * which engine was used.
+ *
+ * Usage:
+ *   import { runSandbox } from "./sandbox-runner.js";
+ *   const result = await runSandbox(code);
+ *   if (result._sandboxEngine === "fallback") {
+ *     logger.warn("Using vm fallback sandbox — not for production");
+ *   }
+ */
+
+import type { SandboxResult } from "./sandbox-types.js";
+
+export interface SandboxRunResult extends SandboxResult {
+  _sandboxEngine: "isolated-vm" | "fallback";
+}
+
+let _useIsolatedVm: boolean | null = null;
+
+async function isIsolatedVmAvailable(): Promise<boolean> {
+  if (_useIsolatedVm !== null) return _useIsolatedVm;
+  try {
+    // @ts-ignore isolated-vm is an optionalDependency — its types may not be
+    // installed here. This probe only cares whether the import throws, not
+    // what it resolves to (present on machines/CI with a working native
+    // toolchain, absent otherwise — @ts-ignore avoids erroring either way).
+    await import("isolated-vm");
+    _useIsolatedVm = true;
+  } catch {
+    _useIsolatedVm = false;
+  }
+  return _useIsolatedVm;
+}
+
+/**
+ * Run untrusted code in the best available sandbox.
+ * Always uses isolated-vm in production — warns if falling back.
+ */
+export async function runSandbox(code: string): Promise<SandboxRunResult> {
+  if (await isIsolatedVmAvailable()) {
+    const { runInSandbox } = await import("./sandbox.js");
+    const result = await runInSandbox(code);
+    return { ...result, _sandboxEngine: "isolated-vm" };
+  }
+
+  if (process.env.NODE_ENV === "production") {
+    return {
+      success: false,
+      error:
+        "[azmr/ai] isolated-vm is required in production. Install VS2022 'Desktop development with C++' workload and run pnpm install.",
+      _sandboxEngine: "fallback",
+    };
+  }
+
+  // Development / CI fallback
+  process.stderr.write(
+    "[azmr/ai] ⚠ isolated-vm unavailable — using vm fallback (DEV only, not production-safe)\n",
+  );
+  const { runInFallbackSandbox } = await import("./sandbox-fallback.js");
+  const result = await runInFallbackSandbox(code);
+  return { ...result, _sandboxEngine: "fallback" };
+}
