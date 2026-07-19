@@ -45,6 +45,12 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: pnpm audit:deps
 
+  package-standards:
+    name: Package standards
+    uses: azmara-labs/pr-quality-checks/.github/workflows/reusable-package-standards.yml@main
+    secrets:
+      app-private-key: ${{ secrets.CLA_BOT_PRIVATE_KEY }}
+
   changeset:
     name: Changeset check
     runs-on: ubuntu-latest
