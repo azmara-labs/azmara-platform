@@ -1,3 +1,21 @@
 packages:
   - 'packages/*'
   - 'apps/*'
+
+overrides:
+  serialize-javascript: '>=7.0.3'
+  shell-quote: '>=1.8.4'
+  websocket-driver: '>=0.7.5'
+  ws: '>=8.21.0'
+
+allowBuilds:
+  '@biomejs/biome': true
+  better-sqlite3: true
+  core-js: true
+  esbuild: true
+  isolated-vm: true
+  msw: true
+  sharp: true
+
+minimumReleaseAgeExclude:
+  - postcss@8.5.20
