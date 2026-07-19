@@ -1,6 +1,6 @@
 {
   "name": "@azmr/db",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Secure SQLite persistence adapter â€” parameterised queries, path containment, tamper-evident audit log",
   "type": "module",
   "license": "MIT",

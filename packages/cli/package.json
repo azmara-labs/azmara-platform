@@ -1,6 +1,6 @@
 {
   "name": "@azmr/cli",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Azmara CLI â€” scaffold apps, query local SQLite databases, manage your platform",
   "type": "module",
   "license": "MIT",

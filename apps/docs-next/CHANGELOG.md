@@ -1,4 +1,4 @@
-# Changelog
+# @azmr/docs-next
 
 ## 0.0.2
 
@@ -10,13 +10,3 @@
   bumped to latest across all packages. `typescript` stays pinned at `^5.7.3`
   (TypeScript 7 currently breaks `tsup`'s `.d.ts` bundling via
   `rollup-plugin-dts`).
-
-All notable changes to this project will be documented in this file.
-
-## [0.0.1] - 2026-06-21
-
-### Added
-
-- Initial release of reactive engine with signals, effects, and computed values
-- Built-in infinite-loop protection
-- Automatic UI updates when data changes
