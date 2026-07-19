@@ -30,8 +30,9 @@ async function isIsolatedVmAvailable(): Promise<boolean> {
   if (_useIsolatedVm !== null) return _useIsolatedVm;
   try {
     // Whether isolated-vm resolves is environment-dependent (native toolchain present
-    // or not). @ts-expect-error would fail here whenever it DOES resolve, since there'd
-    // be no error to expect - @ts-ignore is the only directive that tolerates both states.
+    // or not). The "expect an error" directive would fail here whenever it DOES
+    // resolve, since there'd be no error to expect - only the unconditional ignore
+    // directive tolerates both states.
     // biome-ignore lint/suspicious/noTsIgnore: see comment above
     // @ts-ignore isolated-vm is an optionalDependency; its types may be absent
     await import("isolated-vm");

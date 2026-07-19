@@ -11,4 +11,5 @@ export { assertSafePath } from "./path-safety.js";
 export type { RateLimiter, RateLimitOptions, RateLimitResult } from "./rateLimit.js";
 export { createRateLimiter } from "./rateLimit.js";
 export { assertSafeIdentifier, sanitiseForLog } from "./sanitise.js";
-export { validate, validateEnv, z } from "./validate.js";
+export { validate, z } from "./validate.js";
+export { validateEnv } from "./validate-env.js";

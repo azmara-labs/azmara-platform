@@ -10,9 +10,14 @@
  * verification is actually needed.
  *
  * createAuditLogger is excluded for the same reason as always - it uses
- * node:fs/node:path/node:crypto to write to disk.
+ * node:fs/node:path/node:crypto to write to disk. validateEnv is excluded
+ * too (lives in its own validate-env.ts, not validate.ts) - it reads
+ * process.env directly, a Node global with no browser equivalent that
+ * throws ReferenceError if actually called, not something a static import
+ * check alone can catch. Its own doc comment says "call this once at the
+ * entry point of each app/service" - a server-startup guard by design.
  */
 export type { RateLimiter, RateLimitOptions, RateLimitResult } from "./rateLimit.js";
 export { createRateLimiter } from "./rateLimit.js";
 export { assertSafeIdentifier, sanitiseForLog } from "./sanitise.js";
-export { validate, validateEnv, z } from "./validate.js";
+export { validate, z } from "./validate.js";
