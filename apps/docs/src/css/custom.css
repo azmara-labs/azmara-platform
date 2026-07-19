@@ -1,7 +1,5 @@
 /* Azmara Platform — Docs Theme */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 /* Custom CSS Variables */
 :root {
@@ -59,24 +57,24 @@
 
 /* Text color utilities */
 .text-primary {
-  color: var(--ifm-color-primary) !important;
+  color: var(--ifm-color-primary);
 }
 
 .text-muted-foreground {
-  color: var(--ifm-color-muted-foreground) !important;
+  color: var(--ifm-color-muted-foreground);
 }
 
 /* Background color utilities */
 .bg-primary {
-  background-color: var(--ifm-color-primary) !important;
+  background-color: var(--ifm-color-primary);
 }
 
 .bg-background {
-  background-color: var(--ifm-color-background) !important;
+  background-color: var(--ifm-color-background);
 }
 
 .bg-background-emphasis {
-  background-color: var(--ifm-color-background-emphasis) !important;
+  background-color: var(--ifm-color-background-emphasis);
 }
 
 /* Navbar */
@@ -197,7 +195,7 @@ th {
 }
 
 .tab.active::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -1px;
   left: 0;
@@ -246,12 +244,15 @@ th {
   border: 1px solid var(--ifm-color-emphasis-200);
   border-radius: 12px;
   padding: 2rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
 }
 
 .package-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
   border-color: var(--ifm-color-primary);
 }
 
@@ -290,7 +291,10 @@ th {
   font-size: 0.9rem;
   color: var(--ifm-color-primary);
   text-decoration: none;
-  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
   border: 1px solid var(--ifm-color-emphasis-200);
 }
 
@@ -496,7 +500,7 @@ th {
 }
 
 .tab.active::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -1px;
   left: 0;
@@ -545,12 +549,14 @@ th {
   border: 1px solid var(--ifm-color-emphasis-200);
   border-radius: 12px;
   padding: 2rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .package-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 }
 
 .package-icon {

@@ -1,6 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 /* Custom CSS Variables */
 :root {
@@ -58,22 +56,22 @@
 
 /* Text color utilities */
 .text-primary {
-  color: var(--ifm-color-primary) !important;
+  color: var(--ifm-color-primary);
 }
 
 .text-muted-foreground {
-  color: var(--ifm-color-muted-foreground) !important;
+  color: var(--ifm-color-muted-foreground);
 }
 
 /* Background color utilities */
 .bg-primary {
-  background-color: var(--ifm-color-primary) !important;
+  background-color: var(--ifm-color-primary);
 }
 
 .bg-background {
-  background-color: var(--ifm-color-background) !important;
+  background-color: var(--ifm-color-background);
 }
 
 .bg-background-emphasis {
-  background-color: var(--ifm-color-background-emphasis) !important;
+  background-color: var(--ifm-color-background-emphasis);
 }
