@@ -4,6 +4,9 @@ packages:
 
 overrides:
   serialize-javascript: '>=7.0.3'
+  shell-quote: '>=1.8.4'
+  websocket-driver: '>=0.7.5'
+  ws: '>=8.21.0'
 
 allowBuilds:
   '@biomejs/biome': true
