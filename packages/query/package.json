@@ -8,7 +8,7 @@
   "homepage": "https://docs.azmara.io",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/coderchef26/azmara-platform.git",
+    "url": "git+https://github.com/azmara-labs/azmara-platform.git",
     "directory": "packages/query"
   },
   "keywords": ["query", "filter", "sort", "data", "reactive", "typesafe", "azmara"],
