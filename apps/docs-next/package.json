@@ -1,6 +1,7 @@
 {
   "name": "@azmr/docs-next",
   "version": "0.0.2",
+  "private": true,
   "description": "Azmara Platform documentation site — Next.js with Tailwind CSS and Supabase integration",
   "scripts": {
     "dev": "next dev",
