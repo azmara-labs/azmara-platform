@@ -1,4 +1,10 @@
 export { runInSandbox } from "./sandbox.js";
 export type { SandboxResult } from "./sandbox.js";
+export { runSandbox } from "./sandbox-runner.js";
+export type { SandboxRunResult } from "./sandbox-runner.js";
 export { autoFix, buildContext } from "./fix.js";
 export type { FixResult, ModelAdapter, AzmaraContext } from "./fix.js";
+export { analyzeSource, formatReport } from "./analyze.js";
+export type { AnalysisResult, AnalysisFinding, Severity } from "./analyze.js";
+export { createHttpAdapter } from "./adapters/http.js";
+export type { HttpAdapterOptions } from "./adapters/http.js";
