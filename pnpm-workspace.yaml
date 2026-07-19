@@ -13,3 +13,6 @@ allowBuilds:
   isolated-vm: true
   msw: true
   sharp: true
+
+minimumReleaseAgeExclude:
+  - postcss@8.5.20

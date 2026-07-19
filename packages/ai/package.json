@@ -25,13 +25,13 @@
     "@azmr/security": "workspace:*"
   },
   "optionalDependencies": {
-    "isolated-vm": "^5.0.1"
+    "isolated-vm": "^7.0.0"
   },
   "devDependencies": {
-    "@types/node": "^22.0.0",
-    "tsup": "^8.3.5",
+    "@types/node": "^26.1.1",
+    "tsup": "^8.5.1",
     "typescript": "^5.7.3",
-    "vitest": "^2.1.9"
+    "vitest": "^4.1.10"
   },
   "notes": {
     "isolated-vm": "Requires node-gyp native compilation. On Windows: install Visual Studio Build Tools + Python. See: https://github.com/nicolo-ribaudo/isolated-vm"

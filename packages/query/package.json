@@ -11,11 +11,23 @@
     "url": "git+https://github.com/azmara-labs/azmara-platform.git",
     "directory": "packages/query"
   },
-  "keywords": ["query", "filter", "sort", "data", "reactive", "typesafe", "azmara"],
+  "keywords": [
+    "query",
+    "filter",
+    "sort",
+    "data",
+    "reactive",
+    "typesafe",
+    "azmara"
+  ],
   "engines": {
     "node": ">=18.0.0"
   },
-  "files": ["dist", "README.md", "LICENSE"],
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "exports": {
     ".": {
       "import": "./dist/index.js",
@@ -33,9 +45,9 @@
     "@azmr/core": "workspace:*"
   },
   "devDependencies": {
-    "tsup": "^8.3.5",
+    "tsup": "^8.5.1",
     "typescript": "^5.7.3",
-    "vitest": "^2.1.9"
+    "vitest": "^4.1.10"
   },
   "publishConfig": {
     "access": "public"
