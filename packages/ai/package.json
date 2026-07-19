@@ -2,6 +2,7 @@
   "name": "@azmr/ai",
   "version": "0.0.1",
   "description": "AI auto-fix system with isolated-vm sandboxing — safe code execution and analysis",
+  "license": "MIT",
   "publishConfig": {
     "access": "public"
   },
