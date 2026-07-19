@@ -3,11 +3,8 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Heading from "@theme/Heading";
 import Layout from "@theme/Layout";
 import clsx from "clsx";
-import styles from "./index.module.css";
 import { useEffect, useState } from "react";
-import { signal, effect } from '@azmr/core';
-import { query } from '@azmr/query';
-import { aiFix } from '@azmr/ai';
+import styles from "./index.module.css";
 
 const features = [
   {
@@ -42,7 +39,7 @@ const features = [
   },
 ];
 
-function Feature({ title, description }: { title: string; description: string }) {
+function _Feature({ title, description }: { title: string; description: string }) {
   return (
     <div className={clsx("col col--4", styles.feature)}>
       <div className="padding-horiz--md">
@@ -55,20 +52,20 @@ function Feature({ title, description }: { title: string; description: string })
 
 export default function Home() {
   const { siteConfig } = useDocusaurusContext();
-  const [activeTab, setActiveTab] = useState('signals');
+  const [activeTab, setActiveTab] = useState("signals");
 
   useEffect(() => {
     // Handle tab clicks
     const handleTabClick = (e: MouseEvent) => {
       const target = e.target as HTMLButtonElement;
-      if (target.classList.contains('tab')) {
+      if (target.classList.contains("tab")) {
         e.preventDefault();
-        setActiveTab(target.dataset.tab || 'signals');
+        setActiveTab(target.dataset.tab || "signals");
       }
     };
 
-    document.addEventListener('click', handleTabClick);
-    return () => document.removeEventListener('click', handleTabClick);
+    document.addEventListener("click", handleTabClick);
+    return () => document.removeEventListener("click", handleTabClick);
   }, []);
 
   return (
@@ -76,11 +73,17 @@ export default function Home() {
       <header className="hero hero--primary relative overflow-hidden">
         <div className="container relative z-10">
           <div className="hero-content text-center">
-            <Heading as="h1" className="hero__title text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              Build data-first applications<br/><span className="block text-primary">with reactive TypeScript</span>
+            <Heading
+              as="h1"
+              className="hero__title text-4xl md:text-5xl lg:text-6xl font-bold mb-6"
+            >
+              Build data-first applications
+              <br />
+              <span className="block text-primary">with reactive TypeScript</span>
             </Heading>
             <p className="hero__subtitle text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto mb-8">
-              Create powerful, responsive applications with our reactive engine, type-safe query builder, and secure data layers
+              Create powerful, responsive applications with our reactive engine, type-safe query
+              builder, and secure data layers
             </p>
             <div className="hero-buttons flex flex-col sm:flex-row gap-4 justify-center">
               <Link
@@ -133,23 +136,40 @@ export default function Home() {
         {/* Tabbed Code Demo */}
         <section className="relative overflow-hidden">
           <div className="container relative z-10">
-            <Heading as="h2" className="section-title mb-8 text-center">Code Demo</Heading>
+            <Heading as="h2" className="section-title mb-8 text-center">
+              Code Demo
+            </Heading>
             <div className="tabs-container">
               <div className="tabs flex flex-wrap justify-center gap-2 mb-6">
                 <button
-                  className={clsx('tab', activeTab === 'signals' && 'active', "px-6 py-3 rounded-lg font-medium transition-all duration-200 transform hover:-translate-y-1")}
+                  type="button"
+                  className={clsx(
+                    "tab",
+                    activeTab === "signals" && "active",
+                    "px-6 py-3 rounded-lg font-medium transition-all duration-200 transform hover:-translate-y-1",
+                  )}
                   data-tab="signals"
                 >
                   Reactive signals
                 </button>
                 <button
-                  className={clsx('tab', activeTab === 'query' && 'active', "px-6 py-3 rounded-lg font-medium transition-all duration-200 transform hover:-translate-y-1")}
+                  type="button"
+                  className={clsx(
+                    "tab",
+                    activeTab === "query" && "active",
+                    "px-6 py-3 rounded-lg font-medium transition-all duration-200 transform hover:-translate-y-1",
+                  )}
                   data-tab="query"
                 >
                   Query engine (FoxPro-style)
                 </button>
                 <button
-                  className={clsx('tab', activeTab === 'ai' && 'active', "px-6 py-3 rounded-lg font-medium transition-all duration-200 transform hover:-translate-y-1")}
+                  type="button"
+                  className={clsx(
+                    "tab",
+                    activeTab === "ai" && "active",
+                    "px-6 py-3 rounded-lg font-medium transition-all duration-200 transform hover:-translate-y-1",
+                  )}
                   data-tab="ai"
                 >
                   AI auto-fix with sandbox
@@ -157,38 +177,47 @@ export default function Home() {
               </div>
               <div className="tab-content">
                 <div
-                  className={clsx('tab-pane', activeTab === 'signals' && 'active', "space-y-4")}
+                  className={clsx("tab-pane", activeTab === "signals" && "active", "space-y-4")}
                   id="signals"
                 >
                   <div className="bg-background-emphasis dark:bg-background/50 rounded-lg p-4">
-                    <pre><code className="language-typescript">const count = signal(0);
-count.value = 42;</code></pre>
+                    <pre>
+                      <code className="language-typescript">
+                        const count = signal(0); count.value = 42;
+                      </code>
+                    </pre>
                   </div>
                   <p className="text-sm text-muted-foreground">
                     Signals automatically update dependent values when changed
                   </p>
                 </div>
                 <div
-                  className={clsx('tab-pane', activeTab === 'query' && 'active', "space-y-4")}
+                  className={clsx("tab-pane", activeTab === "query" && "active", "space-y-4")}
                   id="query"
                 >
                   <div className="bg-background-emphasis dark:bg-background/50 rounded-lg p-4">
-                    <pre><code className="language-typescript">// Simple query example
-const users = query.from('users')
-  .where(user => user.active);</code></pre>
+                    <pre>
+                      <code className="language-typescript">
+                        {/* Simple query example */}
+                        {"const users = query.from('users').where(user => user.active);"}
+                      </code>
+                    </pre>
                   </div>
                   <p className="text-sm text-muted-foreground">
                     Type-safe, chainable queries without eval or injection risks
                   </p>
                 </div>
                 <div
-                  className={clsx('tab-pane', activeTab === 'ai' && 'active', "space-y-4")}
+                  className={clsx("tab-pane", activeTab === "ai" && "active", "space-y-4")}
                   id="ai"
                 >
                   <div className="bg-background-emphasis dark:bg-background/50 rounded-lg p-4">
-                    <pre><code className="language-typescript">const fixedCode = aiFix('Fix this code');
-console.log(fixedCode);
-// Outputs: Fixed this code</code></pre>
+                    <pre>
+                      <code className="language-typescript">
+                        const fixedCode = aiFix('Fix this code'); console.log(fixedCode);
+                        {/* Outputs: Fixed this code */}
+                      </code>
+                    </pre>
                   </div>
                   <p className="text-sm text-muted-foreground">
                     AI-powered code analysis in a secure sandbox environment
@@ -207,7 +236,9 @@ console.log(fixedCode);
         {/* Packages Grid */}
         <section className="relative overflow-hidden">
           <div className="container relative z-10">
-            <Heading as="h2" className="section-title mb-8 text-center">Platform Packages</Heading>
+            <Heading as="h2" className="section-title mb-8 text-center">
+              Platform Packages
+            </Heading>
             <div className="packages-container">
               {features.map((f) => (
                 <div key={f.title} className="package-card group">
@@ -216,10 +247,12 @@ console.log(fixedCode);
                   </div>
                   <div className="package-info">
                     <h3 className="package-title text-xl font-bold mb-2">{f.title}</h3>
-                    <p className="package-description text-muted-foreground mb-4">{f.description}</p>
+                    <p className="package-description text-muted-foreground mb-4">
+                      {f.description}
+                    </p>
                     <div className="package-actions">
                       <a
-                        href={`https://www.npmjs.com/package/${f.title.toLowerCase().replace('@azmr/', '')}`}
+                        href={`https://www.npmjs.com/package/${f.title.toLowerCase().replace("@azmr/", "")}`}
                         className="npm-link inline-flex items-center px-4 py-2 rounded-lg font-medium transition-all duration-200 border border-primary/20 hover:border-primary hover:bg-primary hover:text-white"
                       >
                         npm install {f.title}
@@ -240,10 +273,14 @@ console.log(fixedCode);
         {/* Grand Vision */}
         <section className="relative overflow-hidden">
           <div className="container relative z-10">
-            <Heading as="h2" className="section-title mb-8 text-center">Grand Vision</Heading>
+            <Heading as="h2" className="section-title mb-8 text-center">
+              Grand Vision
+            </Heading>
             <div className="vision-steps flex flex-col items-center gap-8">
               <div className="vision-step flex flex-col items-center space-y-3">
-                <div className="step-number w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full font-bold text-lg">1</div>
+                <div className="step-number w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full font-bold text-lg">
+                  1
+                </div>
                 <div className="vision-step-content text-center">
                   <h3 className="vision-step-title font-semibold mb-2">Platform</h3>
                   <p className="vision-step-description text-muted-foreground max-w-md">
@@ -255,7 +292,9 @@ console.log(fixedCode);
                 <span className="text-primary text-2xl font-bold">→</span>
               </div>
               <div className="vision-step flex flex-col items-center space-y-3">
-                <div className="step-number w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full font-bold text-lg">2</div>
+                <div className="step-number w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full font-bold text-lg">
+                  2
+                </div>
                 <div className="vision-step-content text-center">
                   <h3 className="vision-step-title font-semibold mb-2">IDE</h3>
                   <p className="vision-step-description text-muted-foreground max-w-md">
@@ -267,7 +306,9 @@ console.log(fixedCode);
                 <span className="text-primary text-2xl font-bold">→</span>
               </div>
               <div className="vision-step flex flex-col items-center space-y-3">
-                <div className="step-number w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full font-bold text-lg">3</div>
+                <div className="step-number w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full font-bold text-lg">
+                  3
+                </div>
                 <div className="vision-step-content text-center">
                   <h3 className="vision-step-title font-semibold mb-2">OS</h3>
                   <p className="vision-step-description text-muted-foreground max-w-md">
@@ -287,7 +328,12 @@ console.log(fixedCode);
         {/* CTA Section */}
         <section className="relative overflow-hidden">
           <div className="container relative z-10">
-            <Heading as="h2" className="section-title mb-6 text-center text-3xl md:text-4xl font-bold">Ready to build?</Heading>
+            <Heading
+              as="h2"
+              className="section-title mb-6 text-center text-3xl md:text-4xl font-bold"
+            >
+              Ready to build?
+            </Heading>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8 text-center">
               Start building powerful applications with our modern, type-safe platform today
             </p>

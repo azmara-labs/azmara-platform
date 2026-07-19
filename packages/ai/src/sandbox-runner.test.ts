@@ -1,4 +1,4 @@
-import { describe, expect, it, vi, beforeEach } from "vitest";
+import { beforeEach, describe, expect, it, vi } from "vitest";
 
 // Mock isolated-vm as unavailable so tests run on any machine
 vi.mock("isolated-vm", () => {
@@ -40,14 +40,10 @@ describe("sandbox-runner — fallback sandbox (isolated-vm unavailable)", () => 
     expect(result.success).toBe(false);
   });
 
-  it(
-    "enforces timeout on infinite loops",
-    async () => {
-      const { runSandbox } = await import("./sandbox-runner.js");
-      const result = await runSandbox("while(true){}");
-      expect(result.success).toBe(false);
-      expect(result.error?.toLowerCase()).toMatch(/timed out|script execution timed out/);
-    },
-    10_000,
-  );
+  it("enforces timeout on infinite loops", async () => {
+    const { runSandbox } = await import("./sandbox-runner.js");
+    const result = await runSandbox("while(true){}");
+    expect(result.success).toBe(false);
+    expect(result.error?.toLowerCase()).toMatch(/timed out|script execution timed out/);
+  }, 10_000);
 });

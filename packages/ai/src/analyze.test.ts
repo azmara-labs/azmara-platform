@@ -42,10 +42,7 @@ describe("analyzeSource — no-sql-concat", () => {
 
 describe("analyzeSource — no-unguarded-file-access", () => {
   it("flags readFileSync without assertSafePath", () => {
-    const result = analyzeSource(
-      "test.ts",
-      "const data = fs.readFileSync(userPath, 'utf-8');",
-    );
+    const result = analyzeSource("test.ts", "const data = fs.readFileSync(userPath, 'utf-8');");
     expect(result.findings.some((f) => f.rule === "no-unguarded-file-access")).toBe(true);
   });
 
@@ -65,10 +62,7 @@ describe("analyzeSource — effect-missing-disposer", () => {
   });
 
   it("passes when disposer is captured", () => {
-    const result = analyzeSource(
-      "test.ts",
-      "const dispose = effect(() => console.log(x.get()));",
-    );
+    const result = analyzeSource("test.ts", "const dispose = effect(() => console.log(x.get()));");
     expect(result.findings.some((f) => f.rule === "effect-missing-disposer")).toBe(false);
   });
 });
@@ -93,10 +87,7 @@ const bad = computed(() => {
 
 describe("analyzeSource — audit-log-pii", () => {
   it("warns when password appears in audit.log call", () => {
-    const result = analyzeSource(
-      "test.ts",
-      'audit.log("auth", { password: input.password });',
-    );
+    const result = analyzeSource("test.ts", 'audit.log("auth", { password: input.password });');
     expect(result.findings.some((f) => f.rule === "audit-log-pii")).toBe(true);
   });
 

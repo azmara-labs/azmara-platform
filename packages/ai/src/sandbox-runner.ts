@@ -52,7 +52,7 @@ export async function runSandbox(code: string): Promise<SandboxRunResult> {
     return { ...result, _sandboxEngine: "isolated-vm" };
   }
 
-  if (process.env["NODE_ENV"] === "production") {
+  if (process.env.NODE_ENV === "production") {
     return {
       success: false,
       error:

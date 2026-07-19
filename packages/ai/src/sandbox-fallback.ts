@@ -47,9 +47,7 @@ export async function runInFallbackSandbox(code: string): Promise<SandboxResult>
     const message = err instanceof Error ? err.message : String(err);
     return {
       success: false,
-      error: message.includes("timed out")
-        ? `Execution timed out after ${TIMEOUT_MS}ms`
-        : message,
+      error: message.includes("timed out") ? `Execution timed out after ${TIMEOUT_MS}ms` : message,
     };
   }
 }

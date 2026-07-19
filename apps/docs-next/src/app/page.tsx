@@ -1,11 +1,9 @@
-import Link from 'next/link';
+import Link from "next/link";
 
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col">
-      <h1 className="text-4xl font-bold text-center p-8">
-        Azmara Platform Documentation
-      </h1>
+      <h1 className="text-4xl font-bold text-center p-8">Azmara Platform Documentation</h1>
       <div className="flex-1">
         <p className="text-center p-8">
           This is the new Next.js documentation site. Content migration in progress.
