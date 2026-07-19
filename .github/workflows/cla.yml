@@ -33,7 +33,7 @@ jobs:
           path-to-signatures: "signatures/cla.json"
           path-to-document: "https://github.com/azmara-labs/azmara-platform/blob/main/CLA.md"
           branch: "cla-signatures"
-          allowlist: dependabot[bot],azmara-cla-bot[bot]
+          allowlist: dependabot[bot],azmara-cla-bot[bot],coderchef26
           custom-pr-sign-comment: "I have read the CLA Document and I hereby sign the CLA"
           custom-notsigned-prcomment: |
             Thank you for your contribution! Before we can merge this, please sign our
