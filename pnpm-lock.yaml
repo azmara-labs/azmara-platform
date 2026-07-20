@@ -14,6 +14,9 @@ importers:
 
   .:
     devDependencies:
+      '@azmr/pr-quality-checks':
+        specifier: ^0.1.0
+        version: 0.1.0
       '@biomejs/biome':
         specifier: ^2.5.4
         version: 2.5.4
@@ -433,6 +436,10 @@ packages:
 
   '@asamuzakjp/nwsapi@2.3.9':
     resolution: {integrity: sha512-n8GuYSrI9bF7FFZ/SjhwevlHc8xaVlb/7HmHelnc/PZXBD2ZR49NnN9sMMuDdEGPeeRQ5d0hqlSlEpgCX3Wl0Q==}
+
+  '@azmr/pr-quality-checks@0.1.0':
+    resolution: {integrity: sha512-f4YGePfzxDvlMkrhHNOascU3X4BfgBZupDSlO4dyYrzEWioR0xY6HbgeoEm+WYEzCwWKi0PEStVl18TQKGVbsg==}
+    hasBin: true
 
   '@babel/code-frame@7.29.7':
     resolution: {integrity: sha512-Aup7aUOfpbAUg2ROOJN6Iw5f9DMBlzu0mIkm/malLQFN/YQgO48wCj0Kxa3sEHJvPVFg7siR+qRInwXd2qhQKw==}
@@ -7582,6 +7589,8 @@ snapshots:
   '@asamuzakjp/generational-cache@1.0.1': {}
 
   '@asamuzakjp/nwsapi@2.3.9': {}
+
+  '@azmr/pr-quality-checks@0.1.0': {}
 
   '@babel/code-frame@7.29.7':
     dependencies:
