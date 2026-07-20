@@ -19,3 +19,4 @@ allowBuilds:
 
 minimumReleaseAgeExclude:
   - postcss@8.5.20
+  - '@azmr/pr-quality-checks@0.1.0'

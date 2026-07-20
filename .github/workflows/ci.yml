@@ -28,6 +28,9 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
+      - name: Package standards (pr-quality-checks)
+        run: node node_modules/@azmr/pr-quality-checks/scripts/run-all.mjs .
+
       - name: Build packages
         run: pnpm build
 
