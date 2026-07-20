@@ -19,6 +19,7 @@ overrides:
   joi: '>=17.13.4 <18'
   qs: '>=6.15.2 <7'
   esbuild: '>=0.28.1 <0.29.0'
+  '@babel/core': '>=7.29.6 <8'
   # js-yaml has two incompatible major lines in the tree: v3 (Changesets'
   # read-yaml-file, still uses the removed safeLoad/safeDump API) and v4
   # (several independent direct requesters: @changesets/parse,
