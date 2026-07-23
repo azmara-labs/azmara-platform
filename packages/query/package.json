@@ -8,7 +8,7 @@
   "homepage": "https://docs.azmara.io",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/azmara-labs/azmara-platform.git",
+    "url": "git+https://github.com/azmara-labs/platform.git",
     "directory": "packages/query"
   },
   "keywords": [

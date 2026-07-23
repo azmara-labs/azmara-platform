@@ -36,6 +36,12 @@ overrides:
   # to 14.x unverified. Only consumer is sockjs, nested under
   # webpack-dev-server (docs dev server, not the production build).
   uuid: '>=11.1.1 <12'
+  # 2026-07-23 audit batch - all patch/minor bumps within the tree's existing
+  # major, bounded per the same open-floor lesson as above.
+  brace-expansion: '>=1.1.16 <2'
+  svgo: '>=3.3.4 <4'
+  fast-uri: '>=3.1.4 <4'
+  sharp: '>=0.35.0 <1'
 
 allowBuilds:
   '@biomejs/biome': true
