@@ -94,7 +94,7 @@ export default function Home() {
               </Link>
               <Link
                 className="button button--outline button--secondary button--lg px-8 py-3 rounded-lg border-2 hover:border-primary/80 transition-all transform hover:-translate-y-1"
-                href="https://github.com/azmara-labs/azmara-platform"
+                href="https://github.com/azmara-labs/platform"
               >
                 View on GitHub
               </Link>

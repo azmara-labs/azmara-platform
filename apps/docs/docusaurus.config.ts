@@ -31,7 +31,7 @@ const config: Config = {
       {
         docs: {
           sidebarPath: "./sidebars.ts",
-          editUrl: "https://github.com/azmara-labs/azmara-platform/tree/main/apps/docs/",
+          editUrl: "https://github.com/azmara-labs/platform/tree/main/apps/docs/",
 
           // Versioning — snapshot with: pnpm version <version-number>
           lastVersion: "current",
@@ -95,7 +95,7 @@ const config: Config = {
           dropdownActiveClassDisabled: true,
         },
         {
-          href: "https://github.com/azmara-labs/azmara-platform",
+          href: "https://github.com/azmara-labs/platform",
           label: "GitHub",
           position: "right",
         },
@@ -125,7 +125,7 @@ const config: Config = {
           items: [
             {
               label: "GitHub",
-              href: "https://github.com/azmara-labs/azmara-platform",
+              href: "https://github.com/azmara-labs/platform",
             },
           ],
         },

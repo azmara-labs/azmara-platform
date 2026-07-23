@@ -45,6 +45,6 @@ export default defineConfig({
         },
       ],
     },
-    socialLinks: [{ icon: "github", link: "https://github.com/azmara-labs/azmara-platform" }],
+    socialLinks: [{ icon: "github", link: "https://github.com/azmara-labs/platform" }],
   },
 });
